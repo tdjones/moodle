@@ -788,7 +788,8 @@ if ($mformpost->is_cancelled()) {
 
     $fromform->itemid        = $fromform->message['itemid'];
     $fromform->messageformat = $fromform->message['format'];
-    $fromform->message       = $fromform->message['text'];
+    $fromform->message       = strip_tab_characters($fromform->message['text']);
+    $fromform->subject       = strip_tab_characters($fromform->subject);
     // WARNING: the $fromform->message array has been overwritten, do not use it anymore!
     $fromform->messagetrust  = trusttext_trusted($modcontext);
 

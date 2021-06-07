@@ -1718,6 +1718,16 @@ function clean_text($text, $format = FORMAT_HTML, $options = array()) {
 }
 
 /**
+ * Clear tab characters from text
+ * 
+ * @param string $text
+ * @return string The cleaned up text
+ */
+function strip_tab_characters($text) {
+    return preg_replace('/\t/', ' ', $text);
+}
+
+/**
  * Is it necessary to use HTMLPurifier?
  *
  * @private
